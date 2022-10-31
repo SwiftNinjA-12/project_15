@@ -7,17 +7,19 @@
   <title>New Profile</title>
   <link rel="stylesheet" href="/styles/base.css">
   <link rel="stylesheet" href="/styles/profiles.css">
+  <script src="/scripts/file-preview.js" defer></script>
 </head>
 <body>
   <main id="new-user">
-    <form action="/profiles" method="POST">
+    <form action="/profiles" method="POST" enctype="multipart/form-data"><!--you need to add enctype with file uploads. THis is how it is encoded. form data is the one you must select for form data with files-->
       <div class="form-control">
         <label for="username">Username</label>
         <input type="text" id="username" name="username" required>
       </div>
       <div class="form-control">
+        <img id="image-preview" src="" alt="your picked image.">
         <label for="image">User image</label>
-        ???
+        <input type="file" id="image" name="image" required accept="image/jpg,image/png"><!--to input a file-->
       </div>
       <button class="btn">Save User</button>
     </form>
